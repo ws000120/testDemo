@@ -5,7 +5,7 @@ Vue.use(VueRouter)
 const router = [{
     path: '/',
     component: () =>
-        import ('@/components/Drag')
+        import ('@/components/Drag.vue')
 }];
 
 const routers = new VueRouter({

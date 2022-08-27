@@ -11,17 +11,18 @@ module.exports = {
     productionSourceMap: false,
     devServer: {
         open: true, // npm run serve后自动打开页面
-        proxy: {
-            // '/': {
-            //     target: '',
-            //     changeOrigin: true,
-            //     pathRewrite: {
-            //         '': ''
-            //     }
-            // },
-        }
+        // proxy: {
+        // '/': {
+        //     target: '',
+        //     changeOrigin: true,
+        //     pathRewrite: {
+        //         '': ''
+        //     }
+        // },
+        // }
     },
     configureWebpack: (config => {
+        config.resolve.alias['@'] = path.resolve(__dirname, 'src')
         config.plugins.push(
             new htmlWebpackPlugin({
                 template: path.resolve(__dirname, 'public/index.html'),
